@@ -1,0 +1,15 @@
+.snakemake*
+*.sh.*
+*.out
+benchmarks
+logs
+data
+rpackages
+.texlive2019
+check
+._*
+.DS_Store
+.fuse*
+libs
+check
+reports
