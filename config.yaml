@@ -1,0 +1,6 @@
+# This year
+THIS_YEAR: 2021
+
+# UBLAST
+# これは再配布できないから、Docker化できない
+UBLAST_PATH: /home/koki/Software/UBLAST/usearch7.0.1090_i86linux32

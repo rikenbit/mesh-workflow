@@ -10,6 +10,8 @@
 #SBATCH -p node03-06
 SLURM_RESTART_COUNT=2
 
+export LC_ALL=C
+
 cd data/gendoo
 wget http://gendoo.dbcls.jp/data/score.gene.anabaena.coding.A.tab
 wget http://gendoo.dbcls.jp/data/score.gene.anabaena.coding.B.tab
@@ -95,3 +97,12 @@ wget http://gendoo.dbcls.jp/data/score.gene.synecho.coding.C.tab
 wget http://gendoo.dbcls.jp/data/score.gene.synecho.coding.D.tab
 wget http://gendoo.dbcls.jp/data/score.gene.synecho.coding.F.tab
 wget http://gendoo.dbcls.jp/data/score.gene.synecho.coding.G.tab
+
+CountGENDOO=`ls *.tab | wc -l`
+if [ $CountGENDOO -eq 70 ]; then
+    echo GENDOO files are saved
+    touch ../../check/download_gendoo
+else
+    echo GENDOO files are not found...
+    exit 1
+fi

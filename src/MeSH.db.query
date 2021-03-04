@@ -1,0 +1,44 @@
+------------------------------------------------------------------------------
+----------------------------create tables----------------------------------
+------------------------------------------------------------------------------
+DROP TABLE IF EXISTS DATA;
+
+CREATE TABLE DATA (
+  MESHID CHAR(7) NOT NULL,
+  MESHTERM VARCHAR(100) NOT NULL,
+  CATEGORY CHAR(1) NOT NULL,
+  SYNONYM VARCHAR(100),
+  QUALIFIERID CHAR(7),
+  QUALIFIER VARCHAR(100)
+);
+
+UPDATE DATA SET SYNONYM = NULL WHERE SYNONYM == "NA";
+UPDATE DATA SET QUALIFIERID = NULL WHERE QUALIFIERID == "NA";
+UPDATE DATA SET QUALIFIER = NULL WHERE QUALIFIER == "NA";
+
+DROP TABLE IF EXISTS METADATA;
+
+CREATE TABLE METADATA (
+  NAME VARCHAR(80),
+  VALUE VARCHAR(255)
+);
+
+------------------------------------------------------------------------------
+----------------------------- import of files ------------------------------
+------------------------------------------------------------------------------
+.separator @
+.import data/mesh/MeSH.db.tsv DATA
+
+------------------------------------------------------------------------------
+--------------------------- insert into METADATA -----------------------------
+------------------------------------------------------------------------------
+INSERT INTO METADATA VALUES ("SOURCEDATE", "26-Jan-2021");
+INSERT INTO METADATA VALUES ("SOURCENAME", "Medical Subject Headings");
+INSERT INTO METADATA VALUES ("SOURCEURL", "http://www.nlm.nih.gov/mesh/filelist.html");
+INSERT INTO METADATA VALUES ("DBSCHEMA", "MeSH.db");
+INSERT INTO METADATA VALUES ("DBSCHEMAVERSION", "1.0");
+INSERT INTO METADATA VALUES ("MESHVERSION", "2021");
+INSERT INTO METADATA VALUES ("package", "MeSH.db");
+INSERT INTO METADATA VALUES ("Db type", "MeSH.Db");
+
+.separator "|"
