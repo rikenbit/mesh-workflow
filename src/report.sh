@@ -12,4 +12,4 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-/usr/bin/perl src/parse_ascii.pl $1 $2 $3 $4
+Rscript src/report.R $@

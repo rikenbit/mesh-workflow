@@ -12,3 +12,4 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
+julia src/convert_each_org_accession.jl $1 $2

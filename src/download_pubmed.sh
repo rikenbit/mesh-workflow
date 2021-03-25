@@ -12,6 +12,7 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
+mkdir -p data/pubmed
 cd data/pubmed
 lftp -c mirror ftp://ftp.nlm.nih.gov/nlmdata/.medleasebaseline/zip
 cd zip

@@ -15,6 +15,7 @@ export LC_ALL=C
 DFILE="d"$1".bin"
 QFILE="q"$1".bin"
 
+mkdir -p data/mesh
 cd data/mesh
 wget ftp://nlmpubs.nlm.nih.gov/online/mesh/MESH_FILES/asciimesh/$DFILE
 wget ftp://nlmpubs.nlm.nih.gov/online/mesh/MESH_FILES/asciimesh/$QFILE

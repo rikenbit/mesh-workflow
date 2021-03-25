@@ -12,7 +12,7 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-/usr/bin/perl src/parse_ascii2.pl $1 $2 $3 $4
+/usr/bin/perl src/preprocess_parse_ascii2.pl $1 $2 $3 $4
 
 cd data/mesh
 sort -i mesh_term.txt | uniq > pre_mesh_term.txt

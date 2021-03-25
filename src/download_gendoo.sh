@@ -12,6 +12,7 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
+mkdir -p data/gendoo
 cd data/gendoo
 wget http://gendoo.dbcls.jp/data/score.gene.anabaena.coding.A.tab
 wget http://gendoo.dbcls.jp/data/score.gene.anabaena.coding.B.tab

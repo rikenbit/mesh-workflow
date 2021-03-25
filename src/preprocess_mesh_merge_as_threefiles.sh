@@ -12,9 +12,4 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-Rscript src/qualifier.R $@
-
-cd data/mesh
-sort -i qualifier.txt | uniq > pre_qualifier.txt
-cat pre_qualifier.txt > qualifier.txt
-rm pre_qualifier.txt
+Rscript src/preprocess_mesh_merge_as_threefiles.R $@

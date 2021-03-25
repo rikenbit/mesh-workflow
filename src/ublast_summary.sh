@@ -9,7 +9,10 @@
 #SBATCH --requeue
 #SBATCH -p node03-06
 SLURM_RESTART_COUNT=2
-
 export LC_ALL=C
 
-sqlite3 data/sqlite/MeSH.db.sqlite < src/MeSH.db.query
+if [ ! -s $1 ]; then
+	touch $2
+else
+	python src/ublast_summary.py $1 > $2
+fi

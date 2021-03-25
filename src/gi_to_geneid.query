@@ -1,0 +1,114 @@
+DROP TABLE IF EXISTS GIvsGI;
+DROP TABLE IF EXISTS GENEID1;
+DROP TABLE IF EXISTS GENEID2;
+DROP TABLE IF EXISTS GENE2PUBMED;
+DROP TABLE IF EXISTS TMP1;
+DROP TABLE IF EXISTS TMP2;
+DROP TABLE IF EXISTS TMP3;
+
+CREATE TABLE GIvsGI (
+ GI1 INTEGER NOT NULL,
+ GI2 INTEGER NOT NULL
+);
+
+.separator "\t"
+.import XXXXX GIvsGI
+
+/*                  Minor organisms                   */
+CREATE TABLE GENEID1 (
+ GENEID INTEGER NOT NULL,
+ GI INTEGER NOT NULL
+);
+
+.separator "\t"
+.import YYYYY GENEID1
+
+
+/*                  Major organisms                   */
+CREATE TABLE GENEID2 (
+ GENEID INTEGER NOT NULL,
+ GI INTEGER NOT NULL
+);
+
+.separator "\t"
+.import ZZZZZ GENEID2
+
+
+CREATE TABLE GENE2PUBMED (
+ gene_id INTEGER NOT NULL,           -- e.g., 100036770
+ mesh_id VARCHAR(10) NOT NULL,       -- e.g., D000465
+ mesh_category CHAR(1) NOT NULL,     -- e.g., G
+ Source_ID VARCHAR (10) NOT NULL,     -- e.g., NA / pubmed id / gene id
+ Source_DB VARCHAR (10) NOT NULL    -- e.g., gendoo / gene2pubmed / E.coli
+);
+
+.separator "\t"
+.import SSSSS GENE2PUBMED
+
+/* 1st Join */
+CREATE TABLE TMP1 (
+ GENEID INTEGER NOT NULL,
+ GI INTEGER NOT NULL
+);
+
+/* Indexing */
+CREATE INDEX AAA ON GENEID1(GI);
+CREATE INDEX BBB ON GIvsGI(GI2);
+
+INSERT INTO TMP1
+SELECT GENEID1.GENEID, GIvsGI.GI2
+FROM GENEID1, GIvsGI
+WHERE
+GENEID1.GI == GIvsGI.GI1;
+
+
+/* 2nd Join */
+CREATE TABLE TMP2 (
+ GENEID1 INTEGER NOT NULL,
+ GENEID2 INTEGER NOT NULL
+);
+
+/* Indexing */
+CREATE INDEX CCC ON GENEID2(GI);
+CREATE INDEX DDD ON TMP1(GI);
+
+
+INSERT INTO TMP2
+SELECT TMP1.GENEID, GENEID2.GENEID
+FROM TMP1, GENEID2
+WHERE
+TMP1.GI == GENEID2.GI;
+
+/* 3rd Join */
+CREATE TABLE TMP3 (
+  gene_id INTEGER NOT NULL,           -- e.g., 100036770
+  mesh_id VARCHAR(10) NOT NULL,       -- e.g., D000465
+  mesh_category CHAR(1) NOT NULL,     -- e.g., G
+  Source_ID VARCHAR (10) NOT NULL,     -- e.g., NA / pubmed id / gene id
+  Source_DB VARCHAR (10) NOT NULL    -- e.g., gendoo / gene2pubmed / E.coli
+);
+
+/* Indexing */
+CREATE INDEX A ON GENE2PUBMED(gene_id);
+CREATE INDEX B ON TMP2(GENEID2);
+
+
+INSERT INTO TMP3
+SELECT TMP2.GENEID1, GENE2PUBMED.mesh_id, GENE2PUBMED.mesh_category, TMP2.GENEID2, "TTTTT"
+FROM TMP2, GENE2PUBMED
+WHERE
+TMP2.GENEID2 == GENE2PUBMED.gene_id;
+
+/* Indexing */
+CREATE INDEX XXX ON TMP3(gene_id);
+CREATE INDEX YYY ON TMP3(mesh_id);
+CREATE INDEX ZZZ ON TMP3(mesh_category);
+CREATE INDEX XXY ON TMP3(Source_ID);
+CREATE INDEX XXZ ON TMP3(Source_DB);
+
+/* Output */
+.separator "\t"
+.output UUUUU
+SELECT * FROM TMP3;
+
+.exit

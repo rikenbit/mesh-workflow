@@ -1,6 +1,29 @@
+# Organisms Information
+ORG_120: sample_sheet/120.csv # All packages
+ORG_115: sample_sheet/115.csv # Without Gendoo
+ORG_115: sample_sheet/114.csv # For LRBase
+ORG_100: sample_sheet/100.csv # Minor organisms
+ORG_89: sample_sheet/89.csv # Recent organsisms without error
+ORG_15: sample_sheet/15.csv # Major organisms
+ORG_14: sample_sheet/14.csv # Major organisms without Human
+ORG_9: sample_sheet/9.csv # Gendoo
+Type1: sample_sheet/type1.csv # Type1 SQLite（Gendoo + gene2pubmed）
+Type2: sample_sheet/type2.csv # Type2 SQLite（Only gene2pubmed）
+Type3: sample_sheet/type3.csv # Type3 SQLite（RBBH + gene2pubmed）
+Type4: sample_sheet/type4.csv # Type4 SQLite（Only Gendoo）
+Type5: sample_sheet/type5.csv # Type5 SQLite（Only RBBH）
+
 # This year
 THIS_YEAR: 2021
 
-# UBLAST
-# これは再配布できないから、Docker化できない
-UBLAST_PATH: /home/koki/Software/UBLAST/usearch7.0.1090_i86linux32
+# MeSH Version
+MESH_VERSION: 2021
+
+# UBLAST（再配布できないから、Docker化できない）
+UBLAST_PATH: /home/koki/Software/UBLAST/usearch11.0.667_i86linux32
+
+# METADATA Version (Should be bumped in each BioC update)
+METADATA_VERSION: v001
+
+# Bioconductor Version (for next coming)
+BIOC_VERSION: 3.13

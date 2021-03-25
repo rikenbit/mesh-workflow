@@ -12,8 +12,4 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-Rscript src/make_parents.R $@
-
-sort -i $2 | uniq > $2_pre
-cat $2_pre > $2
-rm $2_pre
+cut -f 2 $1 > $2

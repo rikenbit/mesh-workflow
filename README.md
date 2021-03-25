@@ -4,33 +4,62 @@ Workflow to construct  [MeSH.db](https://bioconductor.org/packages/release/data/
 
 # Pre-requisites
 - Bash: GNU bash, version 4.2.46(1)-release (x86_64-redhat-linux-gnu)
-- Snakemake: 5.3.0
-- Anaconda: 4.8.3
+- Snakemake: 6.0.5
+- Anaconda: 4.9.2
 - Singularity: 3.5.3
+
+# Summary
+![](https://github.com/rikenbit/mesh-workflow/blob/master/plot/summary.png)
+![](https://github.com/rikenbit/mesh-workflow/blob/master/plot/summary_percentage.png)
 
 # How to reproduce this workflow
 ## 1. Configuration
-XXXXXX
+- NCBI API Key: For the detail, check [A General Introduction to the E-utilities](https://www.ncbi.nlm.nih.gov/books/NBK25497/).
+- USEARCH: This workflow needs ublast command. Download and install from [USEARCH download](https://drive5.com/usearch/download.html).
+- config.yaml:
+  - UBLAST_PATH: Set the path you downloaded USEARCH
+  - THIS_YEAR: Update when the year changes
+  - METADATA_VERSION: Update like v001 -> v002 -> ...and so on.
+  - MESH_VERSION: Update as needed (check the latest [NLM MeSH](https://www.nlm.nih.gov/databases/download/mesh.html))
+  - BIOC_VERSION: Set next version of see [Bioconductor](https://www.bioconductor.org)
 
 ## 2. Perform snakemake command
-XXXXXX
+The workflow consists of seven snakemake workflows.
 
 In local machine:
 ```
-snakemake -j 4 --use-conda
-snakemake -j 4 --use-singularity
+export NCBI_API_KEY=ABCDE12345 # Your API Key
+snakemake -s workflow/download.smk -j 4 --use-singularity
+snakemake -s workflow/ublast.smk -j 4 --use-singularity
+snakemake -s workflow/preprocess.smk -j 4 --use-singularity
+snakemake -s workflow/categorize.smk -j 4 --use-singularity
+snakemake -s workflow/sqlite.smk -j 4 --use-singularity
+snakemake -s workflow/metadata.smk -j 4 --use-singularity
+snakemake -s workflow/report.smk -j 4 --use-singularity
 ```
 
 In parallel environment (GridEngine):
 ```
-snakemake -j 32 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-conda
-snakemake -j 32 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+export NCBI_API_KEY=ABCDE12345
+snakemake -s workflow/download.smk -j 4 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+snakemake -s workflow/ublast.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+snakemake -s workflow/preprocess.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+snakemake -s workflow/categorize.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+snakemake -s workflow/sqlite.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+snakemake -s workflow/metadata.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+snakemake -s workflow/report.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
 ```
 
 In parallel environment (Slurm):
 ```
-snakemake -j 32 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-conda
-snakemake -j 32 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+export NCBI_API_KEY=ABCDE12345
+snakemake -s workflow/download.smk -j 4 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+snakemake -s workflow/ublast.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+snakemake -s workflow/preprocess.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+snakemake -s workflow/categorize.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+snakemake -s workflow/sqlite.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+snakemake -s workflow/metadata.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+snakemake -s workflow/report.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
 ```
 
 # License

@@ -12,4 +12,4 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-sqlite3 data/sqlite/MeSH.PCR.db.sqlite < src/MeSH.PCR.db.query
+sed "/</d" $1 > $2

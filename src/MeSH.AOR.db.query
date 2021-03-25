@@ -20,17 +20,17 @@ CREATE TABLE METADATA (
 ----------------------------- import of files ------------------------------
 ------------------------------------------------------------------------------
 .separator @
-.import data/mesh/MeSH.AOR.db.tsv DATA
+.import TTTTT DATA
 
 ------------------------------------------------------------------------------
 --------------------------- insert into METADATA -----------------------------
 ------------------------------------------------------------------------------
-INSERT INTO METADATA VALUES ("SOURCEDATE", "26-Jan-2021");
+INSERT INTO METADATA VALUES ("SOURCEDATE", "SSSSS");
 INSERT INTO METADATA VALUES ("SOURCENAME", "Medical Subject Headings");
 INSERT INTO METADATA VALUES ("SOURCEURL", "http://www.nlm.nih.gov/mesh/filelist.html");
 INSERT INTO METADATA VALUES ("DBSCHEMA", "MeSH.AOR.db");
 INSERT INTO METADATA VALUES ("DBSCHEMAVERSION", "1.0");
-INSERT INTO METADATA VALUES ("MESHVERSION", "2021");
+INSERT INTO METADATA VALUES ("MESHVERSION", "UUUUU");
 INSERT INTO METADATA VALUES ("package", "MeSH.AOR.db");
 INSERT INTO METADATA VALUES ("Db type", "MeSH.AOR.db");
 

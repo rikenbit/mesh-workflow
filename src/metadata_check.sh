@@ -9,7 +9,7 @@
 #SBATCH --requeue
 #SBATCH -p node03-06
 SLURM_RESTART_COUNT=2
-
 export LC_ALL=C
 
-Rscript src/merge_as_threefiles.R $@
+# CSV Check
+Rscript src/metadata_check.R $@

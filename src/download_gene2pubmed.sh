@@ -12,6 +12,7 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
+mkdir -p data/gene2pubmed
 cd data/gene2pubmed
 wget ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2pubmed.gz
 gzip -d gene2pubmed.gz

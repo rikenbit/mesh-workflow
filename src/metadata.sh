@@ -9,7 +9,7 @@
 #SBATCH --requeue
 #SBATCH -p node03-06
 SLURM_RESTART_COUNT=2
-
 export LC_ALL=C
 
-sqlite3 data/sqlite/MeSH.AOR.db.sqlite < src/MeSH.AOR.db.query
+# CSV Output
+Rscript src/metadata.R $@

@@ -1,9 +1,13 @@
 .snakemake*
 *.sh.*
 *.out
+slurm-*
 benchmarks
 logs
 data
+sqlite
+report
+output
 rpackages
 .texlive2019
 check

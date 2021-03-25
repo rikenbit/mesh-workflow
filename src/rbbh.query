@@ -1,0 +1,51 @@
+.separator "\t"
+
+DROP TABLE IF EXISTS TMP1;
+DROP TABLE IF EXISTS TMP2;
+DROP TABLE IF EXISTS RBBH;
+
+/* Temporary Table1 */
+CREATE TABLE TMP1(
+ A varchar(30),
+ B varchar(30)
+);
+
+/* Temporary Table2 */
+CREATE TABLE TMP2(
+ A varchar(30),
+ B varchar(30)
+);
+
+.import XXXXX TMP1
+.import YYYYY TMP2
+
+/* RBBH Table */
+CREATE TABLE RBBH(
+ A varchar(30),
+ B varchar(30)
+);
+
+/* INSERT */
+INSERT INTO RBBH
+SELECT TMP1.A, TMP1.B
+FROM TMP1, TMP2
+WHERE
+TMP1.A == TMP2.B
+AND
+TMP1.B == TMP2.A;
+
+/* INDEXING */
+CREATE INDEX TMP1A ON TMP1(A);
+CREATE INDEX TMP1B ON TMP1(B);
+CREATE INDEX TMP2A ON TMP2(A);
+CREATE INDEX TMP2B ON TMP2(B);
+CREATE INDEX RBBHA ON RBBH(A);
+CREATE INDEX RBBHB ON RBBH(B);
+
+.separator "\t"
+/* Output */
+.output ZZZZZ
+
+SELECT * FROM RBBH;
+
+.exit

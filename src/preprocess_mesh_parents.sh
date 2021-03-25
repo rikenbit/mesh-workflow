@@ -12,7 +12,7 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-Rscript src/make_offspring.R $@
+Rscript src/preprocess_mesh_parents.R $@
 
 sort -i $2 | uniq > $2_pre
 cat $2_pre > $2
