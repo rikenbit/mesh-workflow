@@ -9,8 +9,10 @@ Workflow to construct  [MeSH.db](https://bioconductor.org/packages/release/data/
 - Singularity: 3.5.3
 
 # Summary
-![](https://github.com/rikenbit/mesh-workflow/blob/master/plot/summary.png)
-![](https://github.com/rikenbit/mesh-workflow/blob/master/plot/summary_percentage.png)
+![](https://raw.githubusercontent.com/rikenbit/mesh-workflow/main/plot/summary.png)
+![](https://raw.githubusercontent.com/rikenbit/mesh-workflow/main/plot/summary_percentage.png)
+
+
 
 # How to reproduce this workflow
 ## 1. Configuration
@@ -21,7 +23,7 @@ Workflow to construct  [MeSH.db](https://bioconductor.org/packages/release/data/
   - *THIS_YEAR*: Update when the year changes
   - *METADATA_VERSION*: Update like v001 -> v002 -> ...and so on.
   - *MESH_VERSION*: Update as needed (check the latest [NLM MeSH](https://www.nlm.nih.gov/databases/download/mesh.html))
-  - *BIOC_VERSION*: Set next version of see [Bioconductor](https://www.bioconductor.org)
+  - *BIOC_VERSION*: Set next version of [Bioconductor](https://www.bioconductor.org)
 
 ## 2. Perform snakemake command
 The workflow consists of seven snakemake workflows.
