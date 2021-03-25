@@ -14,20 +14,20 @@ Workflow to construct  [MeSH.db](https://bioconductor.org/packages/release/data/
 
 # How to reproduce this workflow
 ## 1. Configuration
-- NCBI API Key: For the detail, check [A General Introduction to the E-utilities](https://www.ncbi.nlm.nih.gov/books/NBK25497/).
-- USEARCH: This workflow needs ublast command. Download and install from [USEARCH download](https://drive5.com/usearch/download.html).
-- config.yaml:
-  - UBLAST_PATH: Set the path you downloaded USEARCH
-  - THIS_YEAR: Update when the year changes
-  - METADATA_VERSION: Update like v001 -> v002 -> ...and so on.
-  - MESH_VERSION: Update as needed (check the latest [NLM MeSH](https://www.nlm.nih.gov/databases/download/mesh.html))
-  - BIOC_VERSION: Set next version of see [Bioconductor](https://www.bioconductor.org)
+- **NCBI API Key**: For the detail, check [A General Introduction to the E-utilities](https://www.ncbi.nlm.nih.gov/books/NBK25497/).
+- **USEARCH**: This workflow needs ublast command. Download and install from [USEARCH download](https://drive5.com/usearch/download.html).
+- **config.yaml**:
+  - *UBLAST_PATH*: Set the path you downloaded USEARCH
+  - *THIS_YEAR*: Update when the year changes
+  - *METADATA_VERSION*: Update like v001 -> v002 -> ...and so on.
+  - *MESH_VERSION*: Update as needed (check the latest [NLM MeSH](https://www.nlm.nih.gov/databases/download/mesh.html))
+  - *BIOC_VERSION*: Set next version of see [Bioconductor](https://www.bioconductor.org)
 
 ## 2. Perform snakemake command
 The workflow consists of seven snakemake workflows.
 
 In local machine:
-```
+```bash
 export NCBI_API_KEY=ABCDE12345 # Your API Key
 snakemake -s workflow/download.smk -j 4 --use-singularity
 snakemake -s workflow/ublast.smk -j 4 --use-singularity
@@ -39,7 +39,7 @@ snakemake -s workflow/report.smk -j 4 --use-singularity
 ```
 
 In parallel environment (GridEngine):
-```
+```bash
 export NCBI_API_KEY=ABCDE12345
 snakemake -s workflow/download.smk -j 4 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
 snakemake -s workflow/ublast.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
@@ -51,7 +51,7 @@ snakemake -s workflow/report.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q 
 ```
 
 In parallel environment (Slurm):
-```
+```bash
 export NCBI_API_KEY=ABCDE12345
 snakemake -s workflow/download.smk -j 4 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
 snakemake -s workflow/ublast.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
