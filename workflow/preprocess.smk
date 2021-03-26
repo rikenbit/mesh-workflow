@@ -38,7 +38,7 @@ rule all:
 		expand('output/gene2pubmed/{t115}.txt', t115=THREENAME_115),
 		expand('output/gendoo/{t9}.txt', t9=THREENAME_9),
 		expand('output/rbbh/{t100}.txt', t100=THREENAME_100),
-		expand('output/rbbh/{t14}.txt', t14=THREENAME_14)
+		expand('output/rbbh/{t14}_vs_Hsa.txt', t14=THREENAME_14)
 
 #############################################
 # Preprocess (PubMed)
@@ -82,6 +82,8 @@ rule preprocess_join:
 		'data/pubmed/pre_mesh.txt'
 	output:
 		'output/gene2pubmed/{t115}.txt'
+	wildcard_constraints:
+			t115='|'.join([re.escape(x) for x in THREENAME_115])
 	params:
 		taxid_115
 	container:
@@ -293,7 +295,7 @@ rule preprocess_merge_14:
   output:
     'output/rbbh/{t14}.txt'
   wildcard_constraints:
-      t14='|'.join([re.escape(x) for x in THREENAME_15])
+      t14='|'.join([re.escape(x) for x in THREENAME_14])
   container:
     "docker://nouchka/sqlite3:latest"
   benchmark:

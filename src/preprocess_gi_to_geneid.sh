@@ -17,8 +17,8 @@ if [ ! -s $1 ] || [ ! -s $2 ] || [ ! -s $3 ] || [ ! -s $4 ]; then
 else
 	sqlitefile=`echo $RANDOM`.sqlite
 	sqlitequery=`echo $RANDOM`.query
-	sname=`echo $4 | sed -e "s|_| |g"`
-	sed -e "s|XXXXX|$1|g" src/gi_to_geneid.query | sed -e "s|YYYYY|$2|g" | sed -e "s|ZZZZZ|$3|g" | sed -e "s|SSSSS|$sname|g" | sed -e "s|TTTTT|$6 $7|g" | sed -e "s|UUUUU|$5_pre|g" > $sqlitequery
+	sname=`echo $6 | sed -e "s|_| |g"`
+	sed -e "s|XXXXX|$1|g" src/gi_to_geneid.query | sed -e "s|YYYYY|$2|g" | sed -e "s|ZZZZZ|$3|g" | sed -e "s|SSSSS|$4|g" | sed -e "s|TTTTT|$sname|g" | sed -e "s|UUUUU|$5_pre|g" > $sqlitequery
 	sqlite3 $sqlitefile < $sqlitequery
 	sort $5_pre | uniq > $5
 	rm -rf $sqlitefile $sqlitequery $5_pre

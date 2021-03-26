@@ -1,7 +1,7 @@
 # Organisms Information
 ORG_120: sample_sheet/120.csv # All packages
 ORG_115: sample_sheet/115.csv # Without Gendoo
-ORG_115: sample_sheet/114.csv # For LRBase
+ORG_114: sample_sheet/114.csv # For LRBase
 ORG_100: sample_sheet/100.csv # Minor organisms
 ORG_89: sample_sheet/89.csv # Recent organsisms without error
 ORG_15: sample_sheet/15.csv # Major organisms

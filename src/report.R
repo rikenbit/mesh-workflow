@@ -74,7 +74,7 @@ g2 <- ggplot(gdata2, aes(x = Name, y = Value, fill = Type)) +
     geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + xlab("Species") + ylab("Percentage (%)") + theme(plot.margin= unit(c(1, 1, -1, 1), "lines"))
 
 ggsave(file='plot/summary.png', plot=g,
-	dpi=500, width=20.0, height=5.0)
+	dpi=500, width=20.0, height=7.0)
 
 ggsave(file='plot/summary_percentage.png', plot=g2,
-dpi=500, width=20.0, height=5.0)
+dpi=500, width=20.0, height=7.0)
