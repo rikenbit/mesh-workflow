@@ -5,7 +5,6 @@ Workflow to construct  [MeSH.db](https://bioconductor.org/packages/release/data/
 # Pre-requisites
 - Bash: GNU bash, version 4.2.46(1)-release (x86_64-redhat-linux-gnu)
 - Snakemake: 6.0.5
-- Anaconda: 4.9.2
 - Singularity: 3.5.3
 
 # Summary
