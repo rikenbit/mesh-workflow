@@ -5,28 +5,26 @@ min_version("6.0.5")
 configfile: "config.yaml"
 
 SQLITE, = glob_wildcards('sqlite/MeSH.{sqlite}.eg.db.sqlite')
+METADATA_VERSION = config['METADATA_VERSION']
 
 rule all:
 	input:
-		'plot/summary.png',
-		'plot/summary_percentage.png'
+		'check/aws'
 
 #############################################
-# Report
+# Data deploy on AWS S3 bucket server
 #############################################
-
-rule report:
+rule aws:
 	input:
 		expand('sqlite/MeSH.{sqlite}.eg.db.sqlite',
 			sqlite=SQLITE)
 	output:
-		'plot/summary.png',
-		'plot/summary_percentage.png'
+		'check/aws'
 	container:
-		"docker://koki/biocdev:latest"
+		"docker://amazon/aws-cli:2.1.32"
 	benchmark:
-		'benchmarks/report.txt'
+		'benchmarks/aws.txt'
 	log:
-		'logs/report.log'
+		'logs/aws.log'
 	shell:
-		'src/report.sh {input} >& {log}'
+		'src/aws.sh {METADATA_VERSION} >& {log}'

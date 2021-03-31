@@ -49,34 +49,40 @@ def sname_Type5(wld):
 
 def cname_Type1(wld):
 	idx=THREENAME_Type1.to_numpy().tolist().index(wld[0])
-	if idx != int:
-		return("_")
+	cname=COMMONNAME_Type1[idx]
+	if not pd.isna(cname):
+		return(cname.replace(' ', '_'))
 	else:
-		return(COMMONNAME_Type1[idx].replace(' ', '_'))
+		return("_")
 def cname_Type2(wld):
 	idx=THREENAME_Type2.to_numpy().tolist().index(wld[0])
-	if idx != int:
-		return("_")
+	cname=COMMONNAME_Type2[idx]
+	if not pd.isna(cname):
+		return(cname.replace(' ', '_'))
 	else:
-		return(COMMONNAME_Type2[idx].replace(' ', '_'))
+		return("_")
 def cname_Type3(wld):
 	idx=THREENAME_Type3.to_numpy().tolist().index(wld[0])
-	if idx != int:
-		return("_")
+	cname=COMMONNAME_Type3[idx]
+	if not pd.isna(cname):
+		return(cname.replace(' ', '_'))
 	else:
-		return(COMMONNAME_Type3[idx].replace(' ', '_'))
+		return("_")
 def cname_Type4(wld):
 	idx=THREENAME_Type4.to_numpy().tolist().index(wld[0])
-	if idx != int:
-		return("_")
+	cname=COMMONNAME_Type4[idx]
+	if not pd.isna(cname):
+		return(cname.replace(' ', '_'))
 	else:
-		return(COMMONNAME_Type4[idx].replace(' ', '_'))
+		return("_")
 def cname_Type5(wld):
 	idx=THREENAME_Type5.to_numpy().tolist().index(wld[0])
-	if idx != int:
-		return("_")
+	cname=COMMONNAME_Type5[idx]
+	if not pd.isna(cname):
+		return(cname.replace(' ', '_'))
 	else:
-		return(COMMONNAME_Type5[idx].replace(' ', '_'))
+		return("_")
+
 
 rule all:
 	input:

@@ -36,7 +36,7 @@ snakemake -s workflow/preprocess.smk -j 4 --use-singularity
 snakemake -s workflow/categorize.smk -j 4 --use-singularity
 snakemake -s workflow/sqlite.smk -j 4 --use-singularity
 snakemake -s workflow/metadata.smk -j 4 --use-singularity
-snakemake -s workflow/report.smk -j 4 --use-singularity
+snakemake -s workflow/plot.smk -j 4 --use-singularity
 ```
 
 In parallel environment (GridEngine):
@@ -48,7 +48,7 @@ snakemake -s workflow/preprocess.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes
 snakemake -s workflow/categorize.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
 snakemake -s workflow/sqlite.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
 snakemake -s workflow/metadata.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
-snakemake -s workflow/report.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
+snakemake -s workflow/plot.smk -j 96 --cluster "qsub -l nc=4 -p -50 -r yes -q node.q" --latency-wait 600 --use-singularity
 ```
 
 In parallel environment (Slurm):
@@ -60,7 +60,7 @@ snakemake -s workflow/preprocess.smk -j 96 --cluster "sbatch -n 4 --nice=50 --re
 snakemake -s workflow/categorize.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
 snakemake -s workflow/sqlite.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
 snakemake -s workflow/metadata.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
-snakemake -s workflow/report.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
+snakemake -s workflow/plot.smk -j 96 --cluster "sbatch -n 4 --nice=50 --requeue -p node03-06" --latency-wait 600 --use-singularity
 ```
 
 # License

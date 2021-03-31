@@ -38,7 +38,7 @@ rule all:
 		expand('output/gene2pubmed/{t115}.txt', t115=THREENAME_115),
 		expand('output/gendoo/{t9}.txt', t9=THREENAME_9),
 		expand('output/rbbh/{t100}.txt', t100=THREENAME_100),
-		expand('output/rbbh/{t14}_vs_Hsa.txt', t14=THREENAME_14)
+		expand('output/rbbh/{t14}.txt', t14=THREENAME_14)
 
 #############################################
 # Preprocess (PubMed)

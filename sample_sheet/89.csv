@@ -1,5 +1,5 @@
 Scientific.name,Abbreviation,Common.name,Taxon.ID
-Anolis carolinensis,Aca,Lizard,28377
+Anolis carolinensis,Aca,Anole lizard,28377
 Anopheles gambiae str. PEST,Aga.PEST,Anopheline,180454
 Ailuropoda melanoleuca,Ame,Panda,9646
 Apis mellifera,Aml,Honey bee,7460
@@ -14,18 +14,18 @@ Canis familiaris,Cfa,Dog,9615
 Ciona intestinalis,Cin,Vasa tunicate,7719
 Callithrix jacchus,Cja,Marmoset,9483
 Cavia porcellus,Cpo,Guinea pig,10141
-Caenorhabditis remanei,Cre,NA,31234
-Drosophila ananassae,Dan,NA,7217
+Caenorhabditis remanei,Cre,Worm,31234
+Drosophila ananassae,Dan,Fruit fly,7217
 Dickeya dadantii 3937,Dda.3937,NA,198628
 Dictyostelium discoideum AX4,Ddi.AX4,NA,352472
-Drosophila erecta,Der,NA,7220
-Drosophila grimshawi,Dgr,NA,7222
-Drosophila mojavensis,Dmo,NA,7230
-Drosophila persimilis,Dpe,NA,7234
-Drosophila sechellia,Dse,NA,7238
-Drosophila simulans,Dsi,NA,7240
-Drosophila virilis,Dvi,NA,7244
-Drosophila yakuba,Dya,NA,7245
+Drosophila erecta,Der,Fruit fly,7220
+Drosophila grimshawi,Dgr,Fruit fly,7222
+Drosophila mojavensis,Dmo,Fruit fly,7230
+Drosophila persimilis,Dpe,Fruit fly,7234
+Drosophila sechellia,Dse,Fruit fly,7238
+Drosophila simulans,Dsi,Fruit fly,7240
+Drosophila virilis,Dvi,Fruit fly,7244
+Drosophila yakuba,Dya,Fruit fly,7245
 Escherichia coli O111:H- str. 11128,Eco.O111.H.11128,NA,585396
 Escherichia coli O26:H11 str. 11368,Eco.O26.H11.11368,NA,573235
 Escherichia coli O103:H2 str. 12009,Eco.O103.H2.12009,NA,585395
@@ -55,7 +55,7 @@ Monodelphis domestica,Mdo,Oppossum,13616
 Meleagris gallopavo,Mga,Turkey,9103
 Macaca mulatta,Mml,Rhesus monkey,9544
 Medicago truncatula,Mtr,Clover,3880
-Nomascus leucogenys,Nle,Gibbon,61853
+Nomascus leucogenys,Nle,Northern white-cheeked gibbon,61853
 Ornithorhynchus anatinus,Oan,Platypus,9258
 Oryctolagus cuniculus,Ocu,Rabbit,9986
 Oreochromis niloticus,Oni,Nile tilapia,8128
@@ -86,5 +86,5 @@ Trypanosoma brucei brucei TREU927,Tbb.TREU927,Trypanosoma,185431
 Toxoplasma gondii ME49,Tgo.ME49,Toxoplasma,508771
 Taeniopygia guttata,Tgu,Zebra finch,59729
 Vitis vinifera,Vvi,Grape,29760
-Xenopus laevis,Xtr,Western Clawed frog,8364
+Xenopus laevis,Xtr,Tropical clawed frog,8364
 Zea mays,Zma,Corn,4577

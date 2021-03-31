@@ -12,4 +12,4 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-Rscript src/report.R $@
+Rscript src/plot.R $@

@@ -18,11 +18,11 @@ lftp -c mirror ftp://ftp.nlm.nih.gov/nlmdata/.medleasebaseline/zip
 cd zip
 unzip -o \*.zip
 
-CountZIP=`ls zip/*.zip | wc -l`
-CountMD5=`ls zip/*.zip.md5 | wc -l`
+CountZIP=`ls zip/*.xml | wc -l`
+CountMD5=`ls *.zip.md5 | wc -l`
 if [ $CountZIP -eq $CountMD5 ]; then
     echo ZIP file is properly unzipped
-    touch ../../check/download_pubmed
+    touch ../../../check/download_pubmed
 else
     echo ZIP file is not properly unzipped...
     exit 1

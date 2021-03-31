@@ -1,6 +1,6 @@
 Scientific.name,Abbreviation,Common.name,Taxon.ID
 Agrobacterium Tumefaciens K84,Atu.K84,NA,311403
-Anolis carolinensis,Aca,Lizard,28377
+Anolis carolinensis,Aca,Anole lizard,28377
 Anopheles gambiae str. PEST,Aga.PEST,Anopheline,180454
 Ailuropoda melanoleuca,Ame,Panda,9646
 Apis mellifera,Aml,Honey bee,7460
@@ -12,15 +12,15 @@ Bacillus subtilis subsp. spizizenii str. RO-NN-1,Bsu.RONN1,NA,1052588
 Bacillus subtilis subsp. spizizenii str. TU-B-10,Bsu.TUB10,NA,1052585
 Bacillus subtilis Bsn5,Bsu.Bsn5,NA,936156
 Bacillus subtilis subsp. spizizenii str. W23,Bsu.W23,NA,655816
-Bos taurus,Bta,Cattle,9913
+Bos taurus,Bta,Cow,9913
 Candida albicans SC5314,Cal.SC5314,NA,237561
-Caenorhabditis briggsae,Cbr,Nematode,6238
-Caenorhabditis elegans,Cel,Nematode,6239
+Caenorhabditis briggsae,Cbr,Worm,6238
+Caenorhabditis elegans,Cel,Worm,6239
 Canis familiaris,Cfa,Dog,9615
 Ciona intestinalis,Cin,Sea squirt,7719
-Callithrix jacchus,Cja,Common marmoset,9483
+Callithrix jacchus,Cja,Marmoset,9483
 Cavia porcellus,Cpo,Guinea pig,10141
-Caenorhabditis remanei,Cre,Nematode,31234
+Caenorhabditis remanei,Cre,Worm,31234
 Drosophila ananassae,Dan,Fruit fly,7217
 Dickeya dadantii 3937,Dda.3937,NA,198628
 Dictyostelium discoideum AX4,Ddi.AX4,Cellular slime mold,352472
@@ -73,7 +73,7 @@ Meleagris gallopavo,Mga,Turkey,9103
 Macaca mulatta,Mml,Rhesus monkey,9544
 Mus musculus,Mmu,Mouse,10090
 Medicago truncatula,Mtr,Clover,3880
-Nomascus leucogenys,Nle,Gibbon,61853
+Nomascus leucogenys,Nle,Northern white-cheeked gibbon,61853
 Ornithorhynchus anatinus,Oan,Platypus,9258
 Oryctolagus cuniculus,Ocu,Rabbit,9986
 Oreochromis niloticus,Oni,Nile tilapia,8128
@@ -111,6 +111,6 @@ Trypanosoma brucei brucei TREU927,Tbb.TREU927,Trypanosoma,185431
 Toxoplasma gondii ME49,Tgo.ME49,Toxoplasma,508771
 Taeniopygia guttata,Tgu,Zebra finch,59729
 Vitis vinifera,Vvi,Grape,29760
-Xenopus laevis,Xla,Western clawed frog,8355
-Xenopus tropicalis,Xtr,Western clawed frog,8364
+Xenopus laevis,Xla,African clawed frog,8355
+Xenopus tropicalis,Xtr,Tropical clawed frog,8364
 Zea mays,Zma,Corn,4577
