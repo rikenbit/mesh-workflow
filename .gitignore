@@ -2,6 +2,7 @@
 *.html
 .aws
 .snakemake*
+.cache
 *.sh.*
 *.out
 slurm-*
