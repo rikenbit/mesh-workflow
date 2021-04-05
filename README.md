@@ -1,6 +1,6 @@
 # mesh-workflow
 
-Workflow to construct  [MeSH.db](https://bioconductor.org/packages/release/data/annotation/html/MeSH.db.html), [MeSH.AOR.db](https://bioconductor.org/packages/release/data/annotation/html/MeSH.AOR.db.html), [MeSH.PCR.db](https://bioconductor.org/packages/release/data/annotation/html/MeSH.PCR.db.html), and [MeSH.XXX.eg.db-type packages](https://bioconductor.org/packages/release/data/annotation/html/MeSH.Hsa.eg.db.html).
+Workflow to SQLite files of [MeSH.db](https://bioconductor.org/packages/release/data/annotation/html/MeSH.db.html), [MeSH.AOR.db](https://bioconductor.org/packages/release/data/annotation/html/MeSH.AOR.db.html), [MeSH.PCR.db](https://bioconductor.org/packages/release/data/annotation/html/MeSH.PCR.db.html), and [MeSH.XXX.eg.db-type packages](https://bioconductor.org/packages/release/data/annotation/html/MeSH.Hsa.eg.db.html).
 
 # Pre-requisites
 - Bash: GNU bash, version 4.2.46(1)-release (x86_64-redhat-linux-gnu)
