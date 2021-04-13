@@ -62,7 +62,8 @@ tags[which(is.na(tags))] <- paste0("MeSHDb:MeSH:NCBI:DBCLS:Gendoo:Gene:NCBI Gene
 	c("MeSH.db", "MeSH.AOR.db", "MeSH.PCR.db"),
 	":", metadata_version)
 
-sourceurl <- paste0("ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2pubmed.gz,ftp://nlmpubs.nlm.nih.gov/online/mesh/MESH_FILES/asciimesh/d", format(Sys.time(), "%Y"), ".bin,ftp://nlmpubs.nlm.nih.gov/online/mesh/MESH_FILES/asciimesh/q", format(Sys.time(), "%Y"), ".bin,ftp://ftp.nlm.nih.gov/nlmdata/.medleasebaseline/zip, http://gendoo.dbcls.jp/data/,ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2accession.gz")
+# sourceurl <- paste0("ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2pubmed.gz,ftp://nlmpubs.nlm.nih.gov/online/mesh/MESH_FILES/asciimesh/d", format(Sys.time(), "%Y"), ".bin,ftp://nlmpubs.nlm.nih.gov/online/mesh/MESH_FILES/asciimesh/q", format(Sys.time(), "%Y"), ".bin,ftp://ftp.nlm.nih.gov/nlmdata/.medleasebaseline/zip, http://gendoo.dbcls.jp/data/,ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2accession.gz")
+sourceurl <- "https://github.com/rikenbit/mesh-workflow"
 
 rdatapath <- paste0("AHMeSHDbs/", metadata_version, "/",
 		c(nonzero_sqlites, nonspecies_sqlites))
