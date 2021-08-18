@@ -14,12 +14,17 @@ export LC_ALL=C
 
 mkdir -p data/pubmed
 cd data/pubmed
-lftp -c mirror ftp://ftp.nlm.nih.gov/nlmdata/.medleasebaseline/zip
-cd zip
-unzip -o \*.zip
+lftp -c mirror ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline
+cd baseline
+md5sum -c *.md5
+if [ $? -ne 0 ]; then
+    echo MD5sum does not match
+    exit 1
+fi
+gzip -d *.gz
 
-CountZIP=`ls zip/*.xml | wc -l`
-CountMD5=`ls *.zip.md5 | wc -l`
+CountZIP=`ls *.xml | wc -l`
+CountMD5=`ls *.gz.md5 | wc -l`
 if [ $CountZIP -eq $CountMD5 ]; then
     echo ZIP file is properly unzipped
     touch ../../../check/download_pubmed
