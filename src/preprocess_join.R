@@ -4,7 +4,7 @@ taxid = commandArgs(trailingOnly=TRUE)[1]
 outfile = commandArgs(trailingOnly=TRUE)[2]
 
 # == pre_meshterm2.uniq.txt
-mesh_term <- fread('data/mesh/MeSH.db.tsv', sep="@", header=FALSE)
+mesh_term <- fread('output/mesh/MeSH.db.tsv', sep="@", header=FALSE)
 gene2pubmed <- fread("data/gene2pubmed/gene2pubmed", sep="\t")
 pre_mesh <- fread('data/pubmed/pre_mesh.txt')
 

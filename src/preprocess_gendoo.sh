@@ -37,7 +37,7 @@ do
 		> "output/gendoo/"$threename"_D"
 	fi
 	if [[ $tabfile =~ ".F.tab" ]]; then
-		cat $tabfile | grep -v Gene | awk 'BEGIN{OFS="\t"}{print $1,$4,"G","NA","gendoo"}' | sort -i | uniq \
+		cat $tabfile | grep -v Gene | awk 'BEGIN{OFS="\t"}{print $1,$4,"F","NA","gendoo"}' | sort -i | uniq \
 		> "output/gendoo/"$threename"_F"
 	fi
 	if [[ $tabfile =~ ".G.tab" ]]; then

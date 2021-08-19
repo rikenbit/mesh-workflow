@@ -1,7 +1,7 @@
 file1 <- commandArgs(trailingOnly=TRUE)[1]
 file2 <- commandArgs(trailingOnly=TRUE)[2]
 CATEGORY <- gsub('data/mesh/mesh_', '',
-	gsub('_parents.txt', '', 'data/mesh/mesh_A_parents.txt'))
+	gsub('_parents.txt', '', file2))
 
 #一列目はmesh_id、二列目はtree_no、三列目はcategory、4列目はparent_tree_no
 data <- as.matrix(read.delim(file1, sep="\t", header=FALSE))

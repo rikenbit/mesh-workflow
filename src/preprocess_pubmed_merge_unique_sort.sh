@@ -12,4 +12,4 @@ SLURM_RESTART_COUNT=2
 
 export LC_ALL=C
 
-cat data/pubmed/mesh_*.txt | sort -i | uniq > data/pubmed/pre_mesh.txt
+ls data/pubmed/mesh_*.txt | xargs cat | sort -i | uniq > data/pubmed/pre_mesh.txt
