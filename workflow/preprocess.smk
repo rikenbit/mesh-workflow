@@ -5,7 +5,7 @@ from snakemake.utils import min_version
 min_version("6.0.5")
 configfile: "config.yaml"
 
-MEDLINES, = glob_wildcards('data/pubmed/zip/zip/{m}.xml')
+MEDLINES, = glob_wildcards('data/pubmed/baseline/{m}.xml')
 
 # Organsisms
 ORG_115 = pd.read_csv(config['ORG_115'], dtype='string')
@@ -45,7 +45,7 @@ rule all:
 #############################################
 rule preprocess_pubmed_parsexml:
 	input:
-		'data/pubmed/zip/zip/{m}.xml'
+		'data/pubmed/baseline/{m}.xml'
 	output:
 		'data/pubmed/mesh_{m}.txt'
 	container:
