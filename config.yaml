@@ -14,16 +14,16 @@ Type4: sample_sheet/type4.csv # Type4 SQLite（Only Gendoo）
 Type5: sample_sheet/type5.csv # Type5 SQLite（Only RBBH）
 
 # This year
-THIS_YEAR: 2021
+THIS_YEAR: 2022
 
 # MeSH Version
-MESH_VERSION: 2021
+MESH_VERSION: 2022
 
 # UBLAST（再配布できないから、Docker化できない）
 UBLAST_PATH: /home/koki/Software/UBLAST/usearch11.0.667_i86linux32
 
 # METADATA Version (Should be bumped in each BioC update)
-METADATA_VERSION: v002
+METADATA_VERSION: v003
 
 # Bioconductor Version (for next coming)
-BIOC_VERSION: 3.14
+BIOC_VERSION: 3.15
