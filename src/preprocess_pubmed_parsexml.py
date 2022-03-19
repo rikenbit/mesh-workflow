@@ -14,7 +14,7 @@ PMID=""
 MeSH_Term_List=[]
 
 # open output file
-p1 = re.compile("zip/zip/")
+p1 = re.compile("baseline/")
 p2 = re.compile(".xml")
 file1 = p2.sub("", p1.sub("mesh_", xml_file)) + ".txt"
 out1 = open(file1, 'a')
