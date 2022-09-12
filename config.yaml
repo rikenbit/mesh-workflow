@@ -23,7 +23,7 @@ MESH_VERSION: 2022
 UBLAST_PATH: /home/koki/Software/UBLAST/usearch11.0.667_i86linux32
 
 # METADATA Version (Should be bumped in each BioC update)
-METADATA_VERSION: v003
+METADATA_VERSION: v004
 
 # Bioconductor Version (for next coming)
-BIOC_VERSION: 3.15
+BIOC_VERSION: 3.16
