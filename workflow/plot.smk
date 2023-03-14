@@ -23,7 +23,7 @@ rule plot:
 		'plot/summary.png',
 		'plot/summary_percentage.png'
 	container:
-		"docker://koki/biocdev:latest"
+		"docker://koki/biocdev:20211020"
 	benchmark:
 		'benchmarks/plot.txt'
 	log:
