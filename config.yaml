@@ -26,4 +26,4 @@ UBLAST_PATH: /home/koki/Software/UBLAST/usearch11.0.667_i86linux32
 METADATA_VERSION: v008
 
 # Bioconductor Version (for next coming)
-BIOC_VERSION: 3.20
+BIOC_VERSION: "3.20"
