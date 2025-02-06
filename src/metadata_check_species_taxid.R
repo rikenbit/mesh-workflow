@@ -8,7 +8,13 @@ input = commandArgs(trailingOnly=TRUE)[1]
 output = commandArgs(trailingOnly=TRUE)[2]
 
 df <- read.table(input, skip=1, sep=",")
-result <- apply(df,1, function(x){return (is.null(checkSpeciesTaxId(as.numeric(x[9]),x[8])))})
+result <- apply(df, 1, function(x) {
+  tryCatch({
+    is.null(checkSpeciesTaxId(as.numeric(x[9]), x[8]))
+  }, error = function(e) {
+    FALSE
+  })
+})
 
 summary(result)
 result
