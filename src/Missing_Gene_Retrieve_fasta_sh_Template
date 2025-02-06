@@ -1,0 +1,4 @@
+#!/bin/bash
+echo >> DDIIRR/data/gene/XXXXX.fasta
+echo >> DDIIRR/data/gene/XXXXX.fasta
+/usr/bin/env perl DDIIRR/src/Skip_PhraseNotFound_Retrieve_fasta.pl DDIIRR/data/newgene/XXXXX.1 >> DDIIRR/data/gene/XXXXX.fasta
