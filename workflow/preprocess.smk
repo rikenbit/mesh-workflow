@@ -139,7 +139,7 @@ rule preprocess_mesh_qualifier:
 	output:
 		'data/mesh/qualifier.txt'
 	container:
-		"docker://rocker/tidyverse:4.0.0"
+		"docker://rocker/tidyverse:4.5"
 	benchmark:
 		'benchmarks/preprocess_mesh_qualifier.txt'
 	log:
@@ -153,7 +153,7 @@ rule preprocess_mesh_parents:
 	output:
 		'data/mesh/mesh_{mc}_parents.txt'
 	container:
-		"docker://rocker/tidyverse:4.0.0"
+		"docker://rocker/tidyverse:4.5"
 	benchmark:
 		'benchmarks/preprocess_mesh_{mc}_parents.txt'
 	log:
@@ -167,7 +167,7 @@ rule preprocess_mesh_offspring:
 	output:
 		'data/mesh/mesh_{mc}_offspring.txt'
 	container:
-		"docker://rocker/tidyverse:4.0.0"
+		"docker://rocker/tidyverse:4.5"
 	benchmark:
 		'benchmarks/preprocess_mesh_{mc}_offspring.txt'
 	log:
@@ -189,7 +189,7 @@ rule preprocess_mesh_merge_as_threefiles:
 		'output/mesh/MeSH.PCR.db.tsv',
 		'output/mesh/MeSH.AOR.db.tsv'
 	container:
-		"docker://rocker/tidyverse:4.0.0"
+		"docker://rocker/tidyverse:4.5"
 	benchmark:
 		'benchmarks/preprocess_mesh_merge_as_threefiles.txt'
 	log:
