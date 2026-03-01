@@ -64,7 +64,7 @@ rule metadata_check_species_taxid:
         output:
                 'check/check_species_taxid_{METADATA_VERSION}'
         container:
-                "docker://bioconductor/bioconductor_docker:RELEASE_3_15"
+                "docker://bioconductor/bioconductor_docker:RELEASE_3_21-r-4.5.2"
         benchmark:
                 'benchmarks/metadata_check_species_taxid_{METADATA_VERSION}.txt'
         log:
