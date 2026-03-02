@@ -14,7 +14,7 @@ export LC_ALL=C
 
 mkdir -p data/gene
 cd data/gene
-wget ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2accession.gz
+wget https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2accession.gz
 gunzip gene2accession.gz
 # split -l 5000000 gene2accession gene2accession
 
